@@ -74,3 +74,11 @@ plt.imshow(im_converted)
 
 out = model.predict(im)
 plt.plot(out.ravel())
+
+
+
+### Extracting feature from the 3rd layer
+
+get_feature = theano.function([model.layers[0].input], model.layers[3].get_output(train=False), allow_input_downcast=False)
+feat = get_feature(im)
+plt.imshow(feat[0][2])
