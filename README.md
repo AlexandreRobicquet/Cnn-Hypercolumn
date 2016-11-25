@@ -22,10 +22,13 @@ pip install -r requirements.txt  # Install dependencies
 ```
 
 work for a while....
+
+```python
 deactivate
+```
 
 
-
+# OpenCv - cv2
 To install and use cv2, please follow the instruction at the following address
 
 http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
