@@ -14,11 +14,14 @@ pip install -r requirements.txt  # Install dependencies
 
 if you want to work in a virtual environement temporarly:
 
+```python
 sudo pip install virtualenv      # This may already be installed
 virtualenv .env                  # Create a virtual environment
 source .env/bin/activate         # Activate the virtual environment
 pip install -r requirements.txt  # Install dependencies
-# work for a while....
+```
+
+work for a while....
 deactivate
 
 
