@@ -12,6 +12,7 @@ from sklearn.manifold import TSNE
 from sklearn import manifold
 from sklearn import cluster
 from sklearn.preprocessing import StandardScaler
+import math
 
 
 def VGG_16(weights_path=None):
