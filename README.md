@@ -1,13 +1,15 @@
-# Cnn-Hypercolumn
+## Cnn-Hypercolumn
 
 
 main code: Cnn-Hypercolumn.py
 
-### Content
+# Content
 
 model and usage demo: see `vgg-16_keras.py`
 
 weights: [vgg16_weights.h5](https://drive.google.com/file/d/0Bz7KyqmuGsilT0J5dmRCM0ROVHc/view?usp=sharing)
+
+# Instruction
 
 to get started, you will need to proceed this way:
 
@@ -31,7 +33,15 @@ deactivate
 ```
 
 
-# OpenCv - cv2
+## OpenCv - cv2
+# direct way
 To install and use cv2, please follow the instruction at the following address
 
 http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/
+
+# Anaconda
+
+```python
+conda install opencv
+```
+
