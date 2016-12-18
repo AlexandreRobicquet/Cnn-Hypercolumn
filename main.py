@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 import theano
+import sys
 import cv2
 import numpy as np
 import scipy as sp
