@@ -4,4 +4,4 @@ numpy
 scipy
 keras
 sklearn
-
+lasagne
