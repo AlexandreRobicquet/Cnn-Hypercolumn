@@ -28,35 +28,35 @@ def get_feature(model, layer_idx, X_batch):
 def VGG_16(weights_path=None):
     model = Sequential()
     model.add(ZeroPadding2D((1,1),input_shape=(3,224,224)))
-    model.add(Convolution2D(64, 3, 3, activation='relu'))
+    model.add(Convolution2D(64, 3, 3, activation='relu'))               # 3
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(64, 3, 3, activation='relu'))
+    model.add(Convolution2D(64, 3, 3, activation='relu'))               # 5
     model.add(MaxPooling2D((2,2), strides=(2,2)))
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(128, 3, 3, activation='relu'))
+    model.add(Convolution2D(128, 3, 3, activation='relu'))              # 8
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(128, 3, 3, activation='relu'))
+    model.add(Convolution2D(128, 3, 3, activation='relu'))              # 10
     model.add(MaxPooling2D((2,2), strides=(2,2)))
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
+    model.add(Convolution2D(256, 3, 3, activation='relu'))              # 13
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
+    model.add(Convolution2D(256, 3, 3, activation='relu'))              # 15
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(256, 3, 3, activation='relu'))
+    model.add(Convolution2D(256, 3, 3, activation='relu'))              # 17
     model.add(MaxPooling2D((2,2), strides=(2,2)))
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 20
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 22
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 24
     model.add(MaxPooling2D((2,2), strides=(2,2)))
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 27
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 29
     model.add(ZeroPadding2D((1,1)))
-    model.add(Convolution2D(512, 3, 3, activation='relu'))
+    model.add(Convolution2D(512, 3, 3, activation='relu'))              # 31
     model.add(MaxPooling2D((2,2), strides=(2,2)))
     model.add(Flatten())
     model.add(Dense(4096, activation='relu'))
