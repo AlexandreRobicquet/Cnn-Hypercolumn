@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from matplotlib import pyplot as plt
 import theano
 import cv2
@@ -13,6 +16,13 @@ from sklearn import manifold
 from sklearn import cluster
 from sklearn.preprocessing import StandardScaler
 import math
+from keras import backend as K
+
+
+def get_feature(model, layer_idx, X_batch):
+    get_activations = K.function([model.layers[0].input, K.learning_phase()], [model.layers[layer_idx].output,])
+    activations = get_activations([X_batch,0])
+    return activations
 
 
 def VGG_16(weights_path=None):
@@ -60,10 +70,17 @@ def VGG_16(weights_path=None):
 
 
 def extract_hypercolumn(model, layer_indexes, instance):
-    layers = [model.layers[li].get_output(train=False) for li in layer_indexes]
-    get_feature = theano.function([model.layers[0].input], layers,
-                                  allow_input_downcast=False)
-    feature_maps = get_feature(instance)
+
+    #get_activations = theano.function([model.layers[0].input], model.layers[1].get_output(train=False), allow_input_downcast=True)
+    #[model.layers[li].input, K.learning_phase()], [model.layers[1].output,]
+
+    layers = [model.layers[li].output for li in layer_indexes]
+    get_features = K.function([model.layers[0].input, K.learning_phase()], layers)
+
+    #get_activations = K.function([model.layers[0].input, K.learning_phase()], [model.layers[layer_idx].output,])
+    #activations = get_activations([instance,0])
+
+    feature_maps = get_features([instance,0])
     hypercolumns = []
     for convmap in feature_maps:
         for fmap in convmap[0]:

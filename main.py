@@ -1,18 +1,5 @@
-from matplotlib import pyplot as plt
-import theano
-import sys
-import cv2
-import numpy as np
-import scipy as sp
-from keras.models import Sequential
-from keras.layers.core import Flatten, Dense, Dropout
-from keras.layers.convolutional import Convolution2D, MaxPooling2D
-from keras.layers.convolutional import ZeroPadding2D
-from keras.optimizers import SGD
-from sklearn.manifold import TSNE
-from sklearn import manifold
-from sklearn import cluster
-from sklearn.preprocessing import StandardScaler
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 from hypercolumn import *
 
@@ -46,6 +33,7 @@ plt.imshow(feat[0][0][13])
 
 
 ## Extracting hypercolumn
-
 layers_extract = [3, 8]
 hc = extract_hypercolumn(model, layers_extract, im)
+ave = np.average(hc.transpose(1, 2, 0), axis=2)
+plt.imshow(ave)
