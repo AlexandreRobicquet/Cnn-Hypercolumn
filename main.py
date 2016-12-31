@@ -14,7 +14,7 @@ im = im_original.transpose((2,0,1))
 im = np.expand_dims(im, axis=0)
 im_converted = cv2.cvtColor(im_original, cv2.COLOR_BGR2RGB)
 plt.imshow(im_converted)
-plt.show()
+# plt.show()
 
 out = model.predict(im)
 plt.plot(out.ravel())
@@ -37,3 +37,20 @@ layers_extract = [3, 8]
 hc = extract_hypercolumn(model, layers_extract, im)
 ave = np.average(hc.transpose(1, 2, 0), axis=2)
 plt.imshow(ave)
+
+
+
+# Simple hypercolumn pixel clustering
+
+"""
+m = hc.transpose(1,2,0).reshape(50176, -1)
+kmeans = cluster.KMeans(n_clusters=2, max_iter=300, n_jobs=5, precompute_distances=True)
+cluster_labels = kmeans .fit_predict(m)
+imcluster = np.zeros((224,224))
+imcluster = imcluster.reshape((224*224,))
+imcluster = cluster_labels
+plt.imshow(imcluster.reshape(224, 224), cmap="hot")
+
+#plt.show()
+
+"""
