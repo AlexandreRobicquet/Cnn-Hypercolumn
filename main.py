@@ -40,7 +40,7 @@ plt.imshow(ave)
 
 
 
-# Simple hypercolumn pixel clustering
+## Simple hypercolumn pixel clustering
 
 """
 m = hc.transpose(1,2,0).reshape(50176, -1)
