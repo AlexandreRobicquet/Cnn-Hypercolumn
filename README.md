@@ -28,8 +28,28 @@ pip install -r requirements.txt  # Install dependencies
 
 work for a while....
 
-```python
+```unix
 deactivate
+```
+
+### WARNING
+
+The last part in main.py should be run on a computer with enough RAM or python will be killed
+
+```python
+
+# Simple hypercolumn pixel clustering
+
+m = hc.transpose(1,2,0).reshape(50176, -1)
+kmeans = cluster.KMeans(n_clusters=2, max_iter=300, n_jobs=5, precompute_distances=True)
+cluster_labels = kmeans .fit_predict(m)
+imcluster = np.zeros((224,224))
+imcluster = imcluster.reshape((224*224,))
+imcluster = cluster_labels
+plt.imshow(imcluster.reshape(224, 224), cmap="hot")
+
+#plt.show()
+
 ```
 
 
