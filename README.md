@@ -2,7 +2,8 @@
 
 
 main code: Cnn-Hypercolumn.py
-more information in 
+more information in [Cnn-ypercolumn](http://blog.christianperone.com/2016/01/convolutional-hypercolumns-in-python/)
+
 ### Content
 
 model and usage demo: see `vgg-16_keras.py`
