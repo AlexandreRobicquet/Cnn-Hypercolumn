@@ -2,7 +2,7 @@
 
 
 main code: Cnn-Hypercolumn.py
-
+more information in 
 ### Content
 
 model and usage demo: see `vgg-16_keras.py`
