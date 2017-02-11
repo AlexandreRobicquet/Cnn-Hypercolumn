@@ -1,5 +1,8 @@
 # Cnn-Hypercolumn
 
+## IN coming:
+ 
+ Inception V3
 
 main code: Cnn-Hypercolumn.py
 
